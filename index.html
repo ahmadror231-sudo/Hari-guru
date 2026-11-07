@@ -1,987 +1,787 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#10152c">
-<title>Selamat Hari Guru, Pak Fitra</title>
+<meta name="theme-color" content="#100d1c">
+<title>For Pak Fitra | Happy Teacher's Day</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
-:root{
-  --gold:#e8c77b;
-  --gold2:#fff0bd;
-  --bg:#0c1020;
-  --panel:#171d34;
-  --text:#f7f3e9;
-  --muted:#b9bfd0;
+:root {
+  --bg:#100d1c;
+  --panel:#1d182c;
+  --gold:#e5c47b;
+  --cream:#fff4df;
+  --muted:#bdb3ca;
 }
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;
-  font-family:'DM Sans',sans-serif;
   background:var(--bg);
-  color:var(--text);
+  color:var(--cream);
+  font-family:Poppins,sans-serif;
   overflow-x:hidden;
 }
 button{font:inherit;cursor:pointer}
 .hidden{display:none!important}
+h1,h2,h3,.serif{font-family:'Playfair Display',serif}
 
 #login{
   position:fixed;
   inset:0;
-  z-index:1000;
+  z-index:20;
   display:flex;
   align-items:center;
   justify-content:center;
   padding:20px;
-  background:
-    radial-gradient(circle at 20% 20%,#28365b 0,transparent 35%),
-    radial-gradient(circle at 80% 80%,#48351f 0,transparent 35%),
-    #0c1020;
-}
-.login-card{
-  width:min(420px,100%);
-  padding:35px 25px;
   text-align:center;
-  border:1px solid #d9b96d55;
-  border-radius:25px;
-  background:#151b30ed;
-  box-shadow:0 20px 80px #0008;
+  background:radial-gradient(circle at top,#44304f,#100d1c 65%);
 }
-.login-card .symbol{font-size:48px}
-.login-card h1{
-  font-family:'Playfair Display',serif;
-  color:var(--gold2);
-  font-size:30px;
-}
-.login-card p{color:var(--muted);line-height:1.7}
+.login-box{width:min(390px,100%)}
+.logo{font-size:45px;color:var(--gold)}
+.login-box h1{font-size:36px;margin:10px 0}
+.login-box p{color:var(--muted)}
 #pin{
   width:100%;
-  padding:15px;
+  padding:16px;
+  border:1px solid #65547c;
   border-radius:12px;
-  border:1px solid #ffffff30;
-  background:#0c1020;
+  background:#201a30;
   color:white;
   text-align:center;
   font-size:22px;
-  letter-spacing:8px;
-  outline:none;
-  margin:12px 0;
+  letter-spacing:12px;
+  margin:15px 0;
 }
-.primary-btn{
+.gold-btn{
+  background:linear-gradient(135deg,#f1d99d,#b78c43);
   border:0;
+  color:#24182b;
+  padding:13px 23px;
   border-radius:30px;
-  padding:13px 25px;
-  color:#201a0e;
-  background:linear-gradient(135deg,var(--gold2),var(--gold));
   font-weight:700;
-  transition:.25s;
 }
-.primary-btn:hover{transform:translateY(-3px);box-shadow:0 8px 25px #e8c77b44}
-#error{color:#ff9b9b;min-height:22px;font-size:13px}
+#error{color:#ff9e9e;font-size:13px;min-height:20px}
 
 #opening{
   position:fixed;
   inset:0;
-  z-index:900;
+  z-index:15;
   display:flex;
-  flex-direction:column;
   align-items:center;
   justify-content:center;
-  padding:25px;
+  flex-direction:column;
   text-align:center;
-  background:
-    radial-gradient(circle at center,#273455,#0c1020 70%);
+  padding:20px;
+  background:radial-gradient(circle,#392442,#100d1c 70%);
 }
 #opening h1{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(30px,7vw,55px);
-  color:var(--gold2);
-  animation:fadeUp 1s both;
+  font-size:clamp(35px,8vw,68px);
+  color:var(--gold);
+  animation:appear 2s both;
 }
-#opening p{color:var(--muted);animation:fadeUp 1.4s both}
-.opening-photos{
+#opening p{letter-spacing:4px;color:#e8d9c2}
+@keyframes appear{
+  from{opacity:0;transform:translateY(35px)}
+  to{opacity:1;transform:translateY(0)}
+}
+#introPhotos{
   display:flex;
+  gap:9px;
+  flex-wrap:wrap;
   justify-content:center;
-  gap:12px;
-  margin:25px 0;
-}
-.opening-photos img{
-  width:clamp(75px,18vw,130px);
-  height:clamp(100px,25vw,165px);
-  object-fit:cover;
-  border-radius:15px;
-  border:2px solid var(--gold);
-  animation:float 3s ease-in-out infinite;
-}
-.opening-photos img:nth-child(2){animation-delay:.3s;transform:translateY(-12px)}
-.opening-photos img:nth-child(3){animation-delay:.6s}
-.loading-line{
-  width:180px;
-  height:3px;
-  background:#ffffff20;
-  border-radius:5px;
+  max-width:650px;
+  max-height:34vh;
   overflow:hidden;
-  margin-top:25px;
+  margin:20px auto;
 }
-.loading-line:after{
-  content:"";
-  display:block;
-  height:100%;
-  width:0;
-  background:var(--gold);
-  animation:loading 5.5s linear forwards;
+#introPhotos img{
+  width:clamp(55px,12vw,85px);
+  height:75px;
+  object-fit:cover;
+  border-radius:10px;
+  animation:photoIn .7s both;
+  border:2px solid var(--gold);
+}
+@keyframes photoIn{
+  from{opacity:0;transform:scale(.3) rotate(-12deg)}
+  to{opacity:1;transform:scale(1) rotate(0)}
 }
 
 #site{display:none}
 header{
-  position:sticky;
-  top:0;
-  z-index:50;
+  padding:18px 7%;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:15px;
-  padding:13px 5%;
-  background:#0c1020eF;
-  backdrop-filter:blur(15px);
-  border-bottom:1px solid #ffffff12;
+  border-bottom:1px solid #ffffff15;
 }
-.logo{
+.brand{
+  font-family:'Playfair Display';
+  font-size:22px;
   color:var(--gold);
-  font-family:'Playfair Display',serif;
-  font-weight:700;
-  font-size:19px;
 }
-nav{display:flex;gap:17px;flex-wrap:wrap}
+nav{display:flex;gap:18px;flex-wrap:wrap}
 nav a{
-  color:var(--muted);
-  text-decoration:none;
   font-size:12px;
+  color:var(--cream);
+  text-decoration:none;
 }
 nav a:hover{color:var(--gold)}
-.header-actions{display:flex;gap:8px}
-.small-btn{
-  border:1px solid #e8c77b66;
-  background:#ffffff0a;
-  color:var(--gold2);
-  padding:9px 12px;
-  border-radius:20px;
-  font-size:12px;
-}
 
 .hero{
-  min-height:85vh;
+  min-height:75vh;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
-  padding:70px 20px;
-  position:relative;
-  overflow:hidden;
-  background:
-    linear-gradient(#0c102080,#0c1020cc),
-    radial-gradient(circle at 50% 40%,#485578,#11172a 65%);
-}
-.hero-content{max-width:800px;position:relative;z-index:2}
-.eyebrow{
-  color:var(--gold);
-  letter-spacing:4px;
-  font-size:12px;
-  text-transform:uppercase;
+  padding:60px 20px;
+  background:radial-gradient(ellipse at 50% 10%,#49304f,#100d1c 65%);
 }
 .hero h1{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(43px,9vw,82px);
-  line-height:1.1;
-  margin:20px 0;
-}
-.hero h1 span{color:var(--gold)}
-.hero p{
-  color:#d0d4df;
-  line-height:1.8;
-  max-width:600px;
-  margin:0 auto 28px;
-}
-.hero-decoration{
-  position:absolute;
-  color:#e8c77b20;
-  font-size:150px;
-}
-.hero-decoration.one{top:10%;left:7%}
-.hero-decoration.two{bottom:5%;right:8%}
-
-section{padding:85px 6%;scroll-margin-top:70px}
-.section-heading{text-align:center;margin-bottom:40px}
-.section-heading .eyebrow{letter-spacing:3px}
-.section-heading h2{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(30px,5vw,45px);
-  margin:12px 0;
-}
-.section-heading p{color:var(--muted);line-height:1.7}
-.gold{color:var(--gold)}
-
-.intro-card{
-  max-width:850px;
-  margin:auto;
-  padding:35px;
-  text-align:center;
-  border:1px solid #e8c77b40;
-  border-radius:22px;
-  background:linear-gradient(145deg,#1c2540,#12182b);
-}
-.intro-card p{color:#d0d4df;line-height:1.9}
-.quote{
-  font-family:'Playfair Display',serif;
-  color:var(--gold2)!important;
-  font-size:clamp(22px,4vw,32px);
-  line-height:1.5!important;
-}
-
-.letter-wrap{max-width:850px;margin:auto}
-.envelope{
-  text-align:center;
-  padding:30px;
-  border:1px solid #e8c77b55;
-  border-radius:20px;
-  background:#171e34;
-}
-.envelope-icon{font-size:55px}
-.letter{
-  display:none;
-  margin-top:20px;
-  padding:clamp(20px,5vw,45px);
-  background:#f5eddb;
-  color:#403727;
-  border-radius:5px;
-  box-shadow:0 15px 40px #0005;
-  line-height:1.9;
-  white-space:pre-line;
-}
-.letter.show{display:block;animation:fadeUp .8s both}
-.letter h3{
-  font-family:'Playfair Display',serif;
-  color:#8b6831;
-  font-size:27px;
-}
-.letter-sign{text-align:right;margin-top:30px}
-
-.gallery-grid{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:15px;
-  max-width:1100px;
-  margin:auto;
-}
-.photo-card{
-  position:relative;
-  overflow:hidden;
-  border-radius:15px;
-  border:1px solid #ffffff20;
-  background:#171d34;
-  cursor:pointer;
-}
-.photo-card img{
-  display:block;
-  width:100%;
-  height:230px;
-  object-fit:cover;
-  transition:transform .5s;
-}
-.photo-card:hover img{transform:scale(1.06)}
-.photo-card p{
-  padding:12px;
-  margin:0;
-  font-size:13px;
-  color:var(--gold2);
-  text-align:center;
-}
-.slideshow{
-  max-width:750px;
-  margin:35px auto 0;
-  text-align:center;
-}
-.slide-image{
-  width:100%;
-  max-height:430px;
-  object-fit:contain;
-  border-radius:15px;
-  background:#080b15;
-  cursor:pointer;
-}
-.slide-controls{display:flex;justify-content:center;gap:12px;margin-top:15px}
-
-.appreciation-grid{
-  max-width:1000px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:15px;
-}
-.appreciation{
-  padding:25px;
-  background:var(--panel);
-  border:1px solid #ffffff12;
-  border-radius:16px;
-  text-align:center;
-}
-.appreciation .icon{font-size:30px}
-.appreciation h3{color:var(--gold2)}
-.appreciation p{color:var(--muted);font-size:14px;line-height:1.7}
-
-.timeline{max-width:750px;margin:auto}
-.timeline-item{
-  border-left:2px solid var(--gold);
-  padding:0 0 30px 25px;
-  position:relative;
-}
-.timeline-item:before{
-  content:"";
-  position:absolute;
-  left:-7px;top:3px;
-  width:12px;height:12px;
-  background:var(--gold);
-  border-radius:50%;
-}
-.timeline-item h3{color:var(--gold2);margin-top:0}
-.timeline-item p{color:var(--muted);line-height:1.7}
-
-.stars{text-align:center}
-.star{
-  font-size:36px;
-  border:0;
-  background:none;
-  color:#626779;
-  padding:4px;
-}
-.star.active{color:var(--gold)}
-#starMessage{color:var(--gold2);min-height:25px}
-
-.visualizer{
-  display:flex;
-  justify-content:center;
-  align-items:end;
-  gap:5px;
-  height:55px;
-  margin:20px auto;
-}
-.visualizer span{
-  width:7px;
-  height:8px;
-  background:var(--gold);
-  border-radius:5px;
-}
-.visualizer.playing span{animation:wave .65s ease-in-out infinite alternate}
-.visualizer.playing span:nth-child(2n){animation-delay:.2s}
-.visualizer.playing span:nth-child(3n){animation-delay:.4s}
-
-.certificate{
-  max-width:800px;
-  margin:auto;
-  padding:35px 20px;
-  border:5px double var(--gold);
-  outline:1px solid #e8c77b55;
-  outline-offset:7px;
-  text-align:center;
-  background:linear-gradient(145deg,#1c2540,#11172a);
-}
-.certificate h2{
-  font-family:'Playfair Display',serif;
-  color:var(--gold2);
-  font-size:clamp(25px,5vw,40px);
-}
-.certificate .recipient{
-  font-family:'Playfair Display',serif;
-  font-size:34px;
+  font-size:clamp(42px,8vw,78px);
+  margin:15px 0;
   color:var(--gold);
 }
-.certificate p{color:#d0d4df;line-height:1.8}
-
-.gift-area{text-align:center}
-.gift{
-  font-size:100px;
-  border:0;
-  background:none;
-  transition:.3s;
-  animation:float 2s ease-in-out infinite;
+.hero p{
+  color:var(--muted);
+  max-width:600px;
+  margin:15px auto 25px;
 }
-.gift:hover{transform:scale(1.12)}
-#giftMessage{
-  display:none;
-  max-width:550px;
-  margin:20px auto;
-  padding:25px;
-  border-radius:15px;
-  background:var(--panel);
-  color:var(--gold2);
-  line-height:1.8;
+.eyebrow{
+  letter-spacing:5px;
+  font-size:12px;
+  color:var(--gold);
+}
+section{
+  padding:75px 7%;
+  max-width:1200px;
+  margin:auto;
+}
+.section-title{text-align:center;margin-bottom:35px}
+.section-title h2{
+  font-size:clamp(30px,5vw,45px);
+  color:var(--gold);
+  margin:8px;
+}
+.section-title p{color:var(--muted);font-size:13px}
+
+.envelope-area{text-align:center}
+.envelope{
+  width:220px;
+  height:145px;
+  margin:35px auto 20px;
+  position:relative;
+  background:#d6b77b;
+  border-radius:5px;
+  cursor:pointer;
+  box-shadow:0 15px 50px #0008;
+  transition:.7s;
+}
+.envelope:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:#ecd49e;
+  clip-path:polygon(0 0,100% 0,50% 60%);
+  transform-origin:top;
+  transition:.8s;
+  z-index:2;
+}
+.envelope:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:#bd9658;
+  clip-path:polygon(0 100%,50% 45%,100% 100%);
+}
+.seal{
+  position:absolute;
+  z-index:3;
+  top:52px;
+  left:calc(50% - 20px);
+  width:40px;
+  height:40px;
+  background:#873e43;
+  color:#ffe6b3;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+}
+.envelope.open:before{transform:rotateX(180deg)}
+.envelope.open{transform:translateY(8px)}
+
+.letter{
+  max-width:720px;
+  margin:25px auto;
+  background:#fff4df;
+  color:#342638;
+  border-radius:14px;
+  padding:30px;
+  text-align:left;
+  line-height:1.9;
+  box-shadow:0 15px 45px #0005;
+}
+.letter h3{
+  color:#9b7138;
+  text-align:center;
+  font-size:27px;
+}
+#typed{white-space:pre-wrap;min-height:150px}
+.letter .signature{margin-top:25px;color:#805b32}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
+  gap:13px;
+}
+.memory img{
+  width:100%;
+  height:190px;
+  object-fit:cover;
+  border-radius:12px;
+  border:1px solid #ffffff25;
+  transition:.35s;
+  cursor:pointer;
+}
+.memory img:hover{transform:translateY(-5px) scale(1.02)}
+.memory p{
+  text-align:center;
+  color:var(--muted);
+  font-size:12px;
+}
+
+.words{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:13px;
+}
+.word{
+  border:1px solid #9d7c4a;
+  padding:15px 22px;
+  border-radius:30px;
+  color:var(--gold);
+  background:#ffffff08;
+  font-family:'Playfair Display';
+  font-size:20px;
+}
+
+.certificate{
+  max-width:750px;
+  margin:auto;
+  padding:30px;
+  background:#fff3d9;
+  color:#392c31;
+  text-align:center;
+  border:8px double #b38a47;
+  outline:2px solid #e2c27e;
+}
+.certificate h2{font-size:36px;color:#926b30}
+.certificate .name{
+  font-family:'Playfair Display';
+  font-size:35px;
+  color:#76512a;
 }
 
 .secret-box{
-  max-width:650px;
+  max-width:700px;
   margin:auto;
   padding:30px;
+  border:1px solid #9c7c4e;
+  border-radius:16px;
+  background:linear-gradient(145deg,#282039,#171324);
+  line-height:1.9;
   text-align:center;
-  background:var(--panel);
-  border:1px solid #e8c77b44;
-  border-radius:20px;
 }
-#secretMessage{
-  display:none;
-  color:var(--gold2);
-  line-height:1.8;
-  margin-top:20px;
-}
+#secretMessage{color:var(--gold);margin-top:15px}
 
-.ending{
-  min-height:70vh;
+.final{
+  min-height:65vh;
   display:flex;
-  flex-direction:column;
   align-items:center;
   justify-content:center;
   text-align:center;
-  position:relative;
-  overflow:hidden;
-  background:radial-gradient(circle,#303d60,#0c1020 70%);
+  flex-direction:column;
+  background:radial-gradient(circle,#48304e,#100d1c 70%);
 }
-.ending h2{
-  font-family:'Playfair Display',serif;
-  color:var(--gold2);
-  font-size:clamp(35px,8vw,75px);
-  margin:10px;
+.final h2{
+  font-size:clamp(40px,9vw,75px);
+  color:var(--gold);
 }
-.ending p{color:var(--muted);line-height:1.8}
-#fireworks{position:absolute;inset:0;pointer-events:none}
-
+.final p{max-width:650px;padding:0 20px;line-height:1.9}
 footer{
   text-align:center;
-  padding:30px 15px;
-  color:#858da3;
-  font-size:13px;
-  border-top:1px solid #ffffff12;
+  padding:30px;
+  color:var(--muted);
+  font-size:12px;
 }
-
+.music{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:10;
+  background:var(--gold);
+  color:#201526;
+  border:0;
+  padding:12px 17px;
+  border-radius:30px;
+  font-weight:600;
+  box-shadow:0 5px 25px #0007;
+}
+#fireworks{position:fixed;inset:0;pointer-events:none;z-index:12}
 #lightbox{
   position:fixed;
   inset:0;
-  z-index:1100;
+  z-index:30;
+  background:#000e;
   display:none;
   align-items:center;
   justify-content:center;
-  padding:20px;
-  background:#000e;
+  padding:15px;
 }
-#lightbox.show{display:flex}
 #lightbox img{
   max-width:95%;
-  max-height:85vh;
+  max-height:90vh;
   object-fit:contain;
+  border-radius:12px;
 }
-#lightbox button{
-  position:absolute;
-  top:20px;right:20px;
-  border:0;
-  background:#ffffff20;
-  color:white;
-  font-size:25px;
-  border-radius:50%;
-  width:45px;height:45px;
-}
+#lightbox button{position:absolute;top:20px;right:20px}
 
-#cursorGlow{
-  position:fixed;
-  width:180px;height:180px;
-  border-radius:50%;
-  background:radial-gradient(circle,#e8c77b12,transparent 70%);
-  pointer-events:none;
-  transform:translate(-50%,-50%);
-  z-index:1;
-}
-.confetti{
-  position:fixed;
-  top:-20px;
-  width:8px;height:12px;
-  z-index:1200;
-  pointer-events:none;
-  animation:fall 3s linear forwards;
-}
-
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(25px)}
-  to{opacity:1;transform:translateY(0)}
-}
-@keyframes float{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-10px)}
-}
-@keyframes loading{to{width:100%}}
-@keyframes wave{
-  from{height:7px}
-  to{height:45px}
-}
-@keyframes fall{
-  to{transform:translateY(110vh) rotate(720deg);opacity:0}
-}
-
-@media(max-width:700px){
-  header{flex-wrap:wrap}
-  nav{order:3;width:100%;justify-content:center;gap:13px}
-  .gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
-  .photo-card img{height:160px}
-  .appreciation-grid{grid-template-columns:1fr}
-  section{padding:65px 5%}
-  .intro-card{padding:25px 18px}
-}
-@media(max-width:380px){
-  .gallery-grid{grid-template-columns:1fr}
-  .photo-card img{height:230px}
+@media(max-width:650px){
+  header{flex-direction:column;gap:14px}
+  nav{justify-content:center;gap:12px}
+  nav a{font-size:11px}
+  section{padding:55px 18px}
+  .letter{padding:20px}
+  .memory img{height:155px}
 }
 </style>
 </head>
 
 <body>
 
-<div id="cursorGlow"></div>
-
-<!-- LOGIN -->
+<!-- LOGIN PIN -->
 <div id="login">
-  <div class="login-card">
-    <div class="symbol">🎁</div>
-    <p class="eyebrow">Sebuah Kenangan</p>
-    <h1>Untuk Pak Fitra</h1>
-    <p>Ada sebuah kejutan kecil yang ingin saya persembahkan untuk Bapak.</p>
-    <input id="pin" type="password" inputmode="numeric" maxlength="4" placeholder="••••">
+  <div class="login-box">
+    <div class="logo">✦</div>
+    <div class="eyebrow">A SPECIAL SURPRISE</div>
+    <h1>For Pak Fitra</h1>
+    <p>A little gift filled with gratitude and memories.</p>
+    <input id="pin" type="password" inputmode="numeric"
+      maxlength="4" placeholder="••••">
+    <button class="gold-btn" onclick="checkPin()">Buka Kenangan ✨</button>
     <div id="error"></div>
-    <button class="primary-btn" type="button" id="openButton">Buka Kenangan</button>
-    <p style="font-size:11px;margin-top:20px">Masukkan PIN untuk melanjutkan</p>
   </div>
 </div>
 
-<!-- OPENING -->
+<!-- CINEMATIC OPENING -->
 <div id="opening" class="hidden">
-  <p class="eyebrow">Sebuah Persembahan</p>
-  <h1>Terima Kasih, Pak Fitra</h1>
-  <p>Setiap kenangan memiliki cerita yang berharga.</p>
-  <div class="opening-photos" id="openingPhotos"></div>
-  <p>Menyiapkan kenangan indah...</p>
-  <div class="loading-line"></div>
+  <div class="eyebrow">A GIFT FROM YOUR STUDENT</div>
+  <h1>HAPPY TEACHER'S DAY</h1>
+  <p>FOR PAK FITRA</p>
+  <div id="introPhotos"></div>
+  <p>MEMORIES THAT WILL LAST FOREVER</p>
 </div>
 
-<!-- WEBSITE -->
 <div id="site">
 
 <header>
-  <div class="logo">Untuk Pak Fitra ✦</div>
+  <div class="brand">✦ For Pak Fitra</div>
   <nav>
-    <a href="#home">Beranda</a>
-    <a href="#letter">Surat</a>
-    <a href="#gallery">Kenangan</a>
-    <a href="#timeline">Perjalanan</a>
-    <a href="#certificate">Penghargaan</a>
+    <a href="#home">Home</a>
+    <a href="#envelope">Surat</a>
+    <a href="#memories">Kenangan</a>
+    <a href="#appreciation">Apresiasi</a>
+    <a href="#certificate">Sertifikat</a>
   </nav>
-  <div class="header-actions">
-    <button class="small-btn" id="musicBtn" type="button">♫ Putar Musik</button>
-    <button class="small-btn" id="fullscreenBtn" type="button">⛶</button>
-  </div>
 </header>
 
-<audio id="music" loop preload="none">
-  <source src="ssstik.io_1794030162499.mp3" type="audio/mpeg">
-</audio>
-
 <!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-decoration one">✦</div>
-  <div class="hero-decoration two">✧</div>
-  <div class="hero-content">
-    <p class="eyebrow">Hari Guru Nasional</p>
-    <h1>Terima Kasih,<br><span>Pak Fitra</span></h1>
-    <p>
-      Untuk seorang guru yang telah memberikan ilmu,
-      inspirasi, dan kenangan yang tidak akan terlupakan.
-    </p>
-    <a href="#letter"><button class="primary-btn" type="button">Baca Pesan Saya</button></a>
+<div class="hero" id="home">
+  <div>
+    <div class="eyebrow">A DAY TO REMEMBER</div>
+    <h1>Happy Teacher's Day</h1>
+    <p>Untuk seseorang yang telah memberikan ilmu, inspirasi, dan kenangan berharga.</p>
+    <a href="#envelope">
+      <button class="gold-btn">Mulai Perjalanan ✨</button>
+    </a>
   </div>
-</section>
+</div>
 
-<!-- INTRO -->
-<section>
-  <div class="section-heading">
-    <p class="eyebrow">Sebuah Persembahan</p>
-    <h2>Untuk Guru <span class="gold">Terbaik</span></h2>
+<!-- ENVELOPE -->
+<section id="envelope">
+  <div class="section-title">
+    <div class="eyebrow">A LETTER FOR YOU</div>
+    <h2>Sebuah Surat</h2>
+    <p>Klik amplop untuk membuka pesan spesial.</p>
   </div>
-  <div class="intro-card">
-    <p class="quote">"Guru hebat tidak hanya mengajar, tetapi juga menginspirasi."</p>
-    <p>
-      Website kecil ini dibuat sebagai bentuk rasa terima kasih
-      atas ilmu, kesabaran, dan pengalaman yang telah Bapak berikan.
-      Mungkin sederhana, tetapi dibuat dengan penuh penghargaan.
-    </p>
+
+  <div class="envelope-area">
+    <div class="envelope" id="envelopeIcon" onclick="openLetter()">
+      <div class="seal">♥</div>
+    </div>
+    <p style="color:var(--muted)">Klik amplop di atas</p>
   </div>
 </section>
 
 <!-- LETTER -->
 <section id="letter">
-  <div class="section-heading">
-    <p class="eyebrow">Dari Hati</p>
-    <h2>Sebuah <span class="gold">Surat</span></h2>
-    <p>Ada sesuatu yang ingin saya sampaikan kepada Bapak.</p>
+  <div class="section-title">
+    <div class="eyebrow">WORDS FROM THE HEART</div>
+    <h2>Surat untuk Pak Fitra</h2>
   </div>
-  <div class="letter-wrap">
-    <div class="envelope">
-      <div class="envelope-icon">💌</div>
-      <h3>Surat untuk Pak Fitra</h3>
-      <p style="color:var(--muted)">Dibuat dengan penuh rasa terima kasih.</p>
-      <button class="primary-btn" id="letterButton" type="button">Buka Surat</button>
+
+  <div class="letter hidden" id="letterContent">
+    <h3>Terima Kasih, Pak Fitra</h3>
+    <div id="typed"></div>
+    <div class="signature">
+      Dengan hormat dan penuh rasa terima kasih,<br>
+      <b>Ahmad Izzudin A.R</b><br>
+      Kelas 8A
     </div>
-    <article class="letter" id="letterContent">
-      <h3>Terima kasih, Pak Fitra.</h3>
-      <div id="typedLetter"></div>
-      <div class="letter-sign">
-        <p>Dengan hormat dan penuh rasa terima kasih,</p>
-        <strong>Ahmad Izzuddin A.R</strong><br>
-        Kelas 8A
-      </div>
-    </article>
   </div>
 </section>
 
-<!-- GALLERY -->
-<section id="gallery">
-  <div class="section-heading">
-    <p class="eyebrow">Album Kenangan</p>
-    <h2>Kenangan <span class="gold">Bersama</span></h2>
+<!-- MEMORIES: 21 PHOTOS -->
+<section id="memories">
+  <div class="section-title">
+    <div class="eyebrow">LITTLE MOMENTS, BIG MEMORIES</div>
+    <h2>Kenangan</h2>
     <p>Setiap foto menyimpan cerita yang berharga.</p>
   </div>
-  <div class="gallery-grid" id="galleryGrid"></div>
-
-  <div class="slideshow">
-    <h3 class="gold">Slideshow Kenangan</h3>
-    <img class="slide-image" id="slideImage" src="1001261459.jpg" alt="Kenangan bersama Pak Fitra">
-    <div class="slide-controls">
-      <button class="small-btn" id="prevSlide" type="button">← Sebelumnya</button>
-      <button class="small-btn" id="nextSlide" type="button">Selanjutnya →</button>
-    </div>
-    <p id="slideCounter" style="color:var(--muted);font-size:13px"></p>
-  </div>
+  <div class="grid" id="gallery"></div>
 </section>
 
-<!-- APPRECIATION -->
-<section>
-  <div class="section-heading">
-    <p class="eyebrow">Terima Kasih</p>
-    <h2>Hal yang <span class="gold">Kami Hargai</span></h2>
+<!-- APPRECIATION WALL -->
+<section id="appreciation">
+  <div class="section-title">
+    <div class="eyebrow">THANK YOU FOR EVERYTHING</div>
+    <h2>Dinding Apresiasi</h2>
+    <p>Beberapa kata sederhana untuk guru yang luar biasa.</p>
   </div>
-  <div class="appreciation-grid">
-    <div class="appreciation">
-      <div class="icon">📚</div>
-      <h3>Ilmu</h3>
-      <p>Terima kasih telah membagikan ilmu dan pengetahuan dengan sabar.</p>
-    </div>
-    <div class="appreciation">
-      <div class="icon">💡</div>
-      <h3>Inspirasi</h3>
-      <p>Terima kasih telah membuat kami lebih berani mencoba dan belajar.</p>
-    </div>
-    <div class="appreciation">
-      <div class="icon">❤️</div>
-      <h3>Kesabaran</h3>
-      <p>Terima kasih atas waktu, perhatian, dan kesabaran Bapak.</p>
-    </div>
-  </div>
-</section>
 
-<!-- TIMELINE -->
-<section id="timeline">
-  <div class="section-heading">
-    <p class="eyebrow">Cerita Kita</p>
-    <h2>Perjalanan <span class="gold">Kenangan</span></h2>
-  </div>
-  <div class="timeline">
-    <div class="timeline-item">
-      <h3>Awal Pembelajaran</h3>
-      <p>Setiap perjalanan belajar dimulai dari rasa ingin tahu dan keberanian untuk mencoba.</p>
-    </div>
-    <div class="timeline-item">
-      <h3>Mulai Memahami</h3>
-      <p>Penjelasan yang sederhana membuat hal-hal yang sulit menjadi lebih mudah dipahami.</p>
-    </div>
-    <div class="timeline-item">
-      <h3>Menemukan Ketertarikan</h3>
-      <p>Belajar bersama Bapak membuat saya semakin tertarik mengenal dunia teknologi.</p>
-    </div>
-    <div class="timeline-item">
-      <h3>Kenangan yang Berharga</h3>
-      <p>Ilmu dan pengalaman yang diberikan akan menjadi bagian dari perjalanan saya ke depannya.</p>
-    </div>
-  </div>
-</section>
-
-<!-- STARS -->
-<section>
-  <div class="section-heading">
-    <p class="eyebrow">Apresiasi</p>
-    <h2>Satu Pesan <span class="gold">Untuk Bapak</span></h2>
-    <p>Berikan bintang sebagai simbol penghargaan.</p>
-  </div>
-  <div class="stars" id="stars">
-    <button class="star" data-value="1" type="button">★</button>
-    <button class="star" data-value="2" type="button">★</button>
-    <button class="star" data-value="3" type="button">★</button>
-    <button class="star" data-value="4" type="button">★</button>
-    <button class="star" data-value="5" type="button">★</button>
-    <p id="starMessage">Pilih bintang untuk memberikan apresiasi.</p>
-  </div>
-</section>
-
-<!-- MUSIC -->
-<section>
-  <div class="section-heading">
-    <p class="eyebrow">Melodi Kenangan</p>
-    <h2>Musik <span class="gold">Untuk Bapak</span></h2>
-    <p>Musik hanya akan diputar setelah tombol musik ditekan.</p>
-  </div>
-  <div class="visualizer" id="visualizer">
-    <span></span><span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span><span></span>
-  </div>
-  <div style="text-align:center">
-    <button class="primary-btn" id="musicSectionBtn" type="button">♫ Putar Musik</button>
+  <div class="words">
+    <div class="word">Sabar</div>
+    <div class="word">Inspiratif</div>
+    <div class="word">Berdedikasi</div>
+    <div class="word">Bijaksana</div>
+    <div class="word">Menginspirasi</div>
+    <div class="word">Terbaik</div>
+    <div class="word">Penuh Ilmu</div>
+    <div class="word">Panutan</div>
   </div>
 </section>
 
 <!-- CERTIFICATE -->
 <section id="certificate">
-  <div class="section-heading">
-    <p class="eyebrow">Penghargaan Khusus</p>
-    <h2>SERTIFIKAT APRESIASI</h2>
+  <div class="section-title">
+    <div class="eyebrow">A SPECIAL RECOGNITION</div>
+    <h2>Sertifikat Guru Terbaik</h2>
   </div>
+
   <div class="certificate">
-    <p class="eyebrow">Penghargaan dengan penuh hormat</p>
-    <h2>SERTIFIKAT APRESIASI</h2>
-    <p>Diberikan kepada</p>
-    <div class="recipient">Pak Fitra</div>
-    <p>
-      Sebagai bentuk penghargaan atas dedikasi, kesabaran,
-      ilmu, dan inspirasi yang telah diberikan kepada murid-murid.
-    </p>
-    <p style="color:var(--gold)">✦ Terima Kasih, Guru Terbaik ✦</p>
-    <p style="margin-top:30px">Diberikan oleh</p>
-    <strong>Ahmad Izzuddin A.R</strong>
-    <p>Kelas 8A</p>
+    <div style="font-size:35px">✦</div>
+    <p style="letter-spacing:4px">CERTIFICATE OF APPRECIATION</p>
+    <h2>Guru Terbaik</h2>
+    <p>Dengan penuh rasa hormat, sertifikat ini diberikan kepada</p>
+    <div class="name">Pak Fitra</div>
+    <p>Atas dedikasi, ilmu, kesabaran, dan inspirasi yang telah diberikan kepada murid-muridnya.</p>
+    <p style="margin-top:35px">Diberikan dengan rasa terima kasih</p>
+    <b>Ahmad Izzudin A.R · Kelas 8A</b>
   </div>
 </section>
 
-<!-- GIFT -->
+<!-- SECRET MESSAGE -->
 <section>
-  <div class="section-heading">
-    <p class="eyebrow">Kejutan Kecil</p>
-    <h2>Sebuah <span class="gold">Hadiah</span></h2>
-    <p>Tekan kotak hadiah untuk membukanya.</p>
+  <div class="section-title">
+    <div class="eyebrow">ONE LAST LITTLE SECRET</div>
+    <h2>Pesan Rahasia</h2>
+    <p>Ada satu pesan yang belum dibuka.</p>
   </div>
-  <div class="gift-area">
-    <button class="gift" id="giftButton" type="button" aria-label="Buka hadiah">🎁</button>
-    <div id="giftMessage">
-      <h3>Terima Kasih, Pak Fitra!</h3>
-      <p>
-        Semoga semua ilmu yang Bapak berikan menjadi kebaikan
-        yang terus mengalir. Semoga Bapak selalu sehat dan bahagia.
-      </p>
-      <strong>Salam hormat dari Ahmad Izzuddin A.R ❤️</strong>
+
+  <div class="secret-box">
+    <div style="font-size:40px">🔐</div>
+    <p>Tekan tombol ini untuk menemukan pesan tersembunyi.</p>
+    <button class="gold-btn" onclick="revealSecret()">Buka Pesan Rahasia</button>
+    <div id="secretMessage" class="hidden">
+      Pak Fitra, mungkin saya tidak selalu bisa mengungkapkan rasa terima kasih secara langsung, tetapi saya sangat menghargai semua ilmu dan kebaikan Bapak. Terima kasih sudah menjadi bagian dari perjalanan kami. ❤️
     </div>
   </div>
 </section>
 
-<!-- SECRET -->
-<section>
-  <div class="section-heading">
-    <p class="eyebrow">Pesan Rahasia</p>
-    <h2>Satu Hal <span class="gold">Yang Ingin Saya Katakan</span></h2>
-    <p>Tekan tombol di bawah untuk membacanya.</p>
-  </div>
-  <div class="secret-box">
-    <button class="primary-btn" id="secretButton" type="button">Lihat Pesan</button>
-    <p id="secretMessage">
-      Terima kasih, Pak Fitra. Semoga Bapak selalu diberi kesehatan,
-      kebahagiaan, dan kesabaran dalam mendidik kami semua.
-    </p>
-  </div>
+<!-- FINAL CINEMATIC -->
+<section class="final" id="ending">
+  <div class="eyebrow">WITH GRATITUDE AND RESPECT</div>
+  <h2>THANK YOU,<br>PAK FITRA!</h2>
+  <p>Guru hebat tidak hanya mengajar, tetapi juga menginspirasi.</p>
+  <p>Terima kasih telah menjadi bagian dari cerita dan perjalanan kami.</p>
+  <button class="gold-btn" onclick="celebrate()">Ulangi Kejutan ✨</button>
 </section>
-
-<!-- ENDING -->
-<section class="ending" id="ending">
-  <canvas id="fireworks"></canvas>
-  <p class="eyebrow">Sampai Jumpa</p>
-  <h2>Selamat Hari Guru</h2>
-  <p>Terima kasih telah menjadi guru yang luar biasa.</p>
-  <button class="primary-btn" id="celebrateBtn" type="button" style="margin-top:20px">🎉 Rayakan</button>
-</section>
-
-<!-- LIGHTBOX -->
-<div id="lightbox">
-  <button id="closeLightbox" type="button" aria-label="Tutup">×</button>
-  <img id="lightboxImg" src="" alt="">
-</div>
 
 <footer>
-  Dibuat dengan penuh rasa hormat oleh Ahmad Izzuddin A.R · Kelas 8A<br>
-  © Hari Guru Nasional
+  Dibuat untuk guru terbaik<br>
+  Ahmad Izzudin A.R · Kelas 8A
 </footer>
+</div>
 
+<!-- MUSIC -->
+<audio id="music" loop preload="none">
+  <source src="./ssstik.io_1794030162499.mp3" type="audio/mpeg">
+</audio>
+<button class="music" id="musicBtn" onclick="toggleMusic()">♫ Putar Musik</button>
+
+<canvas id="fireworks"></canvas>
+
+<!-- PHOTO LIGHTBOX -->
+<div id="lightbox" onclick="closePhoto()">
+  <button class="gold-btn" onclick="closePhoto()">Tutup ✕</button>
+  <img id="lightboxImg" alt="Foto kenangan">
 </div>
 
 <script>
-// ===== KONFIGURASI (ganti sesuai kebutuhan) =====
-const PIN = "1234";
+/* SELURUH 21 FOTO */
 const photos = [
-  "1001261459.jpg"
-  // tambahkan nama foto lain, contoh: "foto2.jpg", "foto3.jpg"
+  "1001261457.jpg",
+  "1001261459.jpg",
+
+  "FB_IMG_1794032614993.jpg",
+  "FB_IMG_1794032521925.jpg",
+  "FB_IMG_1794032506513.jpg",
+  "FB_IMG_1794032460193.jpg",
+  "FB_IMG_1794032440754.jpg",
+  "FB_IMG_1794032413736.jpg",
+  "FB_IMG_1794032375234.jpg",
+  "FB_IMG_1794032333590.jpg",
+  "FB_IMG_1794032310594.jpg",
+  "FB_IMG_1794032286389.jpg",
+  "FB_IMG_1794032247547.jpg",
+  "FB_IMG_1794032230583.jpg",
+
+  "FB_IMG_1794037320763.jpg",
+  "FB_IMG_1794037307897.jpg",
+  "IMG-20261107-WA0005.jpg",
+  "FB_IMG_1794037229831.jpg",
+  "FB_IMG_1794037237587.jpg",
+  "FB_IMG_1794037248670.jpg",
+  "FB_IMG_1794037277897.jpg"
 ];
-const letterText = `Bapak yang saya hormati,
 
-Terima kasih atas ilmu, kesabaran, dan waktu yang telah Bapak berikan selama ini. Setiap penjelasan Bapak membuat hal yang sulit terasa lebih mudah dipahami.
-
-Semoga Bapak selalu sehat, bahagia, dan dimudahkan dalam setiap langkah.`;
-
-// ===== LOGIN =====
-const pinInput = document.getElementById("pin");
-const errorBox = document.getElementById("error");
-
+/* PIN */
 function checkPin(){
-  if(pinInput.value === PIN){
-    document.getElementById("login").classList.add("hidden");
-    document.getElementById("opening").classList.remove("hidden");
-    setTimeout(()=>{
-      document.getElementById("opening").classList.add("hidden");
-      document.getElementById("site").style.display = "block";
-    }, 5500);
-  } else {
-    errorBox.textContent = "PIN belum tepat, coba lagi ya.";
-    pinInput.value = "";
+  const value=document.getElementById('pin').value;
+
+  if(value!=="1234"){
+    document.getElementById('error').textContent="PIN salah. Coba lagi.";
+    return;
   }
+
+  document.getElementById('login').classList.add('hidden');
+  startOpening();
 }
-document.getElementById("openButton").addEventListener("click", checkPin);
-pinInput.addEventListener("keydown", e=>{ if(e.key === "Enter") checkPin(); });
 
-// Foto pada layar pembuka
-document.getElementById("openingPhotos").innerHTML =
-  photos.slice(0,3).map(p=>`<img src="${p}" alt="">`).join("");
-
-// ===== SURAT =====
-document.getElementById("letterButton").addEventListener("click", ()=>{
-  document.getElementById("typedLetter").textContent = letterText;
-  document.getElementById("letterContent").classList.add("show");
-  document.getElementById("letterButton").style.display = "none";
+document.getElementById('pin').addEventListener('keydown',e=>{
+  if(e.key==="Enter")checkPin();
 });
 
-// ===== GALERI =====
-const grid = document.getElementById("galleryGrid");
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightboxImg");
+/* OPENING ANIMATION */
+function startOpening(){
+  const opening=document.getElementById('opening');
+  opening.classList.remove('hidden');
 
-photos.forEach((p,i)=>{
-  const card = document.createElement("div");
-  card.className = "photo-card";
-  card.innerHTML = `<img src="${p}" alt="Kenangan ${i+1}"><p>Kenangan ${i+1}</p>`;
-  card.addEventListener("click", ()=> openLightbox(p));
-  grid.appendChild(card);
-});
+  const container=document.getElementById('introPhotos');
 
-function openLightbox(src){
-  lightboxImg.src = src;
-  lightbox.classList.add("show");
-}
-document.getElementById("closeLightbox").addEventListener("click", ()=> lightbox.classList.remove("show"));
-lightbox.addEventListener("click", e=>{ if(e.target === lightbox) lightbox.classList.remove("show"); });
-
-// ===== SLIDESHOW =====
-let current = 0;
-const slideImg = document.getElementById("slideImage");
-const counter = document.getElementById("slideCounter");
-
-function showSlide(){
-  slideImg.src = photos[current];
-  counter.textContent = `${current+1} / ${photos.length}`;
-}
-document.getElementById("nextSlide").addEventListener("click", ()=>{
-  current = (current + 1) % photos.length; showSlide();
-});
-document.getElementById("prevSlide").addEventListener("click", ()=>{
-  current = (current - 1 + photos.length) % photos.length; showSlide();
-});
-slideImg.addEventListener("click", ()=> openLightbox(photos[current]));
-showSlide();
-
-// ===== BINTANG =====
-const stars = document.querySelectorAll(".star");
-const starMsg = document.getElementById("starMessage");
-stars.forEach(star=>{
-  star.addEventListener("click", ()=>{
-    const value = Number(star.dataset.value);
-    stars.forEach(s=> s.classList.toggle("active", Number(s.dataset.value) <= value));
-    starMsg.textContent = `Terima kasih, ${value} bintang untuk Bapak! ★`;
+  photos.forEach((src,i)=>{
+    const img=document.createElement('img');
+    img.src="./"+src;
+    img.alt="Kenangan "+(i+1);
+    img.style.animationDelay=(i*.08)+"s";
+    container.appendChild(img);
   });
+
+  setTimeout(()=>{
+    opening.classList.add('hidden');
+    document.getElementById('site').style.display='block';
+    document.getElementById('home').scrollIntoView();
+  },6000);
+}
+
+/* GALLERY */
+const gallery=document.getElementById('gallery');
+
+photos.forEach((src,i)=>{
+  const card=document.createElement('div');
+  card.className='memory';
+
+  const img=document.createElement('img');
+  img.src="./"+src;
+  img.alt="Kenangan "+(i+1);
+  img.loading="lazy";
+  img.onclick=()=>showPhoto(src);
+
+  const caption=document.createElement('p');
+  caption.textContent="Kenangan "+(i+1);
+
+  card.append(img,caption);
+  gallery.appendChild(card);
 });
 
-// ===== MUSIK =====
-const music = document.getElementById("music");
-const visualizer = document.getElementById("visualizer");
+/* TYPING LETTER */
+const message = `Terima kasih, Pak Fitra, atas semua ilmu yang telah Bapak berikan.
+
+Terima kasih karena telah membimbing, mengajar, dan membantu kami belajar banyak hal.
+
+Mungkin saya bukan murid yang sempurna, tetapi saya tidak akan melupakan guru yang telah mengajarkan banyak hal kepada saya.
+
+Semoga Bapak selalu diberikan kesehatan, kebahagiaan, dan kesuksesan.
+
+Selamat Hari Guru, Pak Fitra!`;
+
+function openLetter(){
+  const envelope=document.getElementById('envelopeIcon');
+  envelope.classList.add('open');
+
+  const letter=document.getElementById('letterContent');
+  letter.classList.remove('hidden');
+
+  document.getElementById('letter').scrollIntoView({behavior:'smooth'});
+
+  if(letter.dataset.started)return;
+  letter.dataset.started="yes";
+
+  const target=document.getElementById('typed');
+  let i=0;
+
+  function type(){
+    if(i<message.length){
+      target.textContent+=message.charAt(i++);
+      setTimeout(type,28);
+    }
+  }
+
+  setTimeout(type,600);
+}
+
+/* SECRET MESSAGE */
+function revealSecret(){
+  document.getElementById('secretMessage').classList.remove('hidden');
+}
+
+/* MUSIC */
+const music=document.getElementById('music');
+const musicBtn=document.getElementById('musicBtn');
 
 function toggleMusic(){
   if(music.paused){
-    music.play().catch(()=>{});
-    visualizer.classList.add("playing");
-  } else {
+    music.play().then(()=>{
+      musicBtn.textContent="♫ Jeda Musik";
+    }).catch(()=>{
+      alert("Musik belum bisa diputar. Periksa file MP3 di GitHub.");
+    });
+  }else{
     music.pause();
-    visualizer.classList.remove("playing");
+    musicBtn.textContent="♫ Putar Musik";
   }
 }
-document.getElementById("musicBtn").addEventListener("click", toggleMusic);
-document.getElementById("musicSectionBtn").addEventListener("click", toggleMusic);
 
-// ===== HADIAH =====
-document.getElementById("giftButton").addEventListener("click", ()=>{
-  document.getElementById("giftMessage").style.display = "block";
-});
-
-// ===== PESAN RAHASIA =====
-document.getElementById("secretButton").addEventListener("click", ()=>{
-  document.getElementById("secretMessage").style.display = "block";
-});
-
-// ===== FULLSCREEN =====
-document.getElementById("fullscreenBtn").addEventListener("click", ()=>{
-  if(!document.fullscreenElement) document.documentElement.requestFullscreen?.();
-  else document.exitFullscreen?.();
-});
-
-// ===== KONFETI =====
-function confettiBurst(count = 80){
-  const colors = ["#e8c77b","#fff0bd","#ffffff","#b9bfd0"];
-  for(let i=0;i<count;i++){
-    const c = document.createElement("div");
-    c.className = "confetti";
-    c.style.left = Math.random()*100 + "vw";
-    c.style.background = colors[i % colors.length];
-    c.style.animationDelay = Math.random()*0.5 + "s";
-    document.body.appendChild(c);
-    setTimeout(()=> c.remove(), 3800);
-  }
+/* PHOTO VIEWER */
+function showPhoto(src){
+  document.getElementById('lightboxImg').src="./"+src;
+  document.getElementById('lightbox').style.display='flex';
 }
-document.getElementById("celebrateBtn").addEventListener("click", ()=> confettiBurst());
 
-// ===== EFEK KURSOR =====
-const glow = document.getElementById("cursorGlow");
-document.addEventListener("mousemove", e=>{
-  glow.style.left = e.clientX + "px";
-  glow.style.top = e.clientY + "px";
-});
+function closePhoto(){
+  document.getElementById('lightbox').style.display='none';
+}
+
+/* FIREWORKS */
+const canvas=document.getElementById('fireworks');
+const ctx=canvas.getContext('2d');
+let particles=[];
+
+function resizeCanvas(){
+  canvas.width=window.innerWidth;
+  canvas.height=window.innerHeight;
+}
+window.addEventListener('resize',resizeCanvas);
+resizeCanvas();
+
+function startFireworks(){
+  for(let n=0;n<7;n++){
+    const x=Math.random()*canvas.width;
+    const y=Math.random()*canvas.height*.65;
+
+    for(let i=0;i<55;i++){
+      const angle=Math.PI*2*i/55;
+      const speed=1+Math.random()*4;
+
+      particles.push({
+        x,y,
+        vx:Math.cos(angle)*speed,
+        vy:Math.sin(angle)*speed,
+        life:80+Math.random()*30,
+        color:["#f5d58b","#fff0d0","#dca7ed","#ffffff"][Math.floor(Math.random()*4)]
+      });
+    }
+  }
+
+  animateFireworks();
+}
+
+let animationRunning=false;
+
+function animateFireworks(){
+  if(animationRunning)return;
+  animationRunning=true;
+
+  function frame(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles=particles.filter(p=>p.life>0);
+
+    particles.forEach(p=>{
+      p.x+=p.vx;
+      p.y+=p.vy;
+      p.vy+=.025;
+      p.life--;
+
+      ctx.globalAlpha=Math.min(1,p.life/35);
+      ctx.fillStyle=p.color;
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,2,0,Math.PI*2);
+      ctx.fill();
+    });
+
+    ctx.globalAlpha=1;
+
+    if(particles.length){
+      requestAnimationFrame(frame);
+    }else{
+      animationRunning=false;
+    }
+  }
+
+  frame();
+}
+
+function celebrate(){
+  document.getElementById('ending').scrollIntoView({behavior:'smooth'});
+  startFireworks();
+}
+
+/* AUTOMATIC FINAL FIREWORKS */
+let endObserver=new IntersectionObserver(entries=>{
+  if(entries[0].isIntersecting && !window.didCelebrate){
+    window.didCelebrate=true;
+    startFireworks();
+  }
+},{threshold:.55});
+
+endObserver.observe(document.getElementById('ending'));
 </script>
 
 </body>
