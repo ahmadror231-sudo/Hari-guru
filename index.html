@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#171522">
+<title>Untuk Pak Fitra ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ margin:0;background:#171522;color:white;
+ font-family:'DM Sans',sans-serif;
+}
+button{font:inherit;cursor:pointer}
+.hidden{display:none!important}
+.page{
+ width:min(680px,92%);margin:auto;
+ padding:45px 0 110px;text-align:center;
+}
+.gold{color:#e9c58e}
+.tag{
+ letter-spacing:4px;font-size:11px;
+ color:#e9c58e;margin-bottom:18px;
+}
+h1,h2{font-family:'Playfair Display',serif}
+h1{font-size:clamp(38px,9vw,58px);margin:12px 0}
+p{line-height:1.85;color:#c9c3d2;font-size:14px}
+.card{
+ background:#ffffff0b;border:1px solid #ffffff20;
+ border-radius:22px;padding:27px;margin-top:25px;
+}
+input{
+ width:100%;padding:16px;border-radius:12px;
+ background:#ffffff10;border:1px solid #ffffff30;
+ color:white;text-align:center;font-size:24px;
+ letter-spacing:12px;margin:20px 0;outline:none;
+}
+.btn{
+ width:100%;padding:15px;border:0;border-radius:12px;
+ background:linear-gradient(120deg,#cda66e,#f3d9aa);
+ color:#241d28;font-weight:700;margin-top:10px;
+}
+.btn2{
+ background:#ffffff12;color:white;
+ border:1px solid #ffffff25;
+}
+#message{color:#edc68e;font-size:13px;margin-top:12px}
+
+/* FOTO ASLI TANPA EDIT */
+.photo-frame{
+ width:100%;overflow:hidden;border-radius:19px;
+ margin:25px auto;border:1px solid #d6b77c66;
+ background:#262333;
+}
+.photo-frame img{
+ display:block;width:100%;height:auto;
+}
+.photo-caption{
+ padding:22px 15px;
+ background:linear-gradient(135deg,#30283a,#191723);
+}
+.photo-caption h2{margin:0;color:#f0d4a6;font-size:28px}
+.photo-caption p{margin:8px 0 0}
+
+.teacher-frame{
+ max-width:460px;margin:35px auto;
+ border:1px solid #d9b982;border-radius:20px;
+ overflow:hidden;background:#211e2b;
+}
+.teacher-frame img{display:block;width:100%;height:auto}
+.teacher-caption{padding:20px}
+.teacher-caption h2{color:#e8c58f;margin:0}
+.teacher-caption p{margin-bottom:0}
+
+.letter{
+ text-align:left;background:#f4e8d5;color:#594733;
+ border-radius:8px;padding:30px 24px;
+ margin-top:25px;box-shadow:0 15px 50px #0005;
+ animation:appear .8s ease;
+}
+.letter h2{
+ text-align:center;color:#80603f;font-size:27px;
+}
+.letter p{color:#594733;font-size:14px}
+.signature{text-align:right;font-weight:600}
+.divider{height:1px;background:#d5bea0;margin:20px 0}
+
+.gift{font-size:75px;margin:25px}
+footer{margin-top:35px;color:#817b8c;font-size:11px}
+
+.music-player{
+ position:fixed;bottom:14px;left:50%;
+ transform:translateX(-50%);
+ width:min(430px,92%);z-index:10;
+ background:#292535ed;border:1px solid #ffffff25;
+ border-radius:18px;padding:12px 16px;
+ display:flex;align-items:center;gap:13px;
+ box-shadow:0 8px 35px #0008;
+}
+.music-player button{
+ border:0;border-radius:50%;width:44px;height:44px;
+ background:#e8c58f;color:#241d28;font-size:18px;
+}
+.music-info{flex:1;text-align:left}
+.music-info b{font-size:12px}
+.music-info small{
+ display:block;color:#aaa2b6;font-size:10px;margin-top:4px
+}
+@keyframes appear{
+ from{opacity:0;transform:translateY(20px)}
+ to{opacity:1;transform:translateY(0)}
+}
+@keyframes fall{
+ to{transform:translateY(110vh) rotate(700deg);opacity:0}
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN PIN -->
+<section class="page" id="login">
+ <div class="tag">A SPECIAL GIFT · 2026</div>
+ <div style="font-size:45px">💌</div>
+ <h1>Untuk <span class="gold">Pak Fitra</span></h1>
+ <p>Ada hadiah kecil yang ingin saya berikan<br>
+ untuk guru terbaik.</p>
+
+ <div class="card">
+  <div style="font-size:35px">🔐</div>
+  <h3>Hadiah Rahasia</h3>
+  <p>Masukkan PIN untuk membuka hadiah.</p>
+  <input id="pin" type="password"
+   inputmode="numeric" maxlength="4" placeholder="••••">
+  <button class="btn" onclick="checkPin()">BUKA HADIAH ✨</button>
+  <div id="message"></div>
+ </div>
+ <footer>Dibuat dengan sepenuh hati ❤️</footer>
+</section>
+
+<!-- HALAMAN UTAMA -->
+<main class="page hidden" id="main">
+
+ <div class="tag">HAPPY TEACHER'S DAY</div>
+ <h1>Selamat Hari<br><span class="gold">Guru!</span></h1>
+ <p>Sebuah hadiah sederhana untuk seseorang<br>
+ yang telah memberikan banyak ilmu dan inspirasi.</p>
+
+ <!-- FOTO KELUARGA -->
+ <div class="photo-frame">
+  <img src="./1001261457.jpg"
+   alt="Foto keluarga Pak Fitra">
+  <div class="photo-caption">
+   <h2>Untuk Pak Fitra ❤️</h2>
+   <p>Terima kasih telah menjadi bagian dari perjalanan kami.</p>
+  </div>
+ </div>
+
+ <div class="tag">OUR INSPIRATION</div>
+ <h2 style="font-size:30px">A Teacher to Remember</h2>
+ <p>Seorang guru, sejuta inspirasi.</p>
+
+ <!-- FOTO PAK FITRA -->
+ <div class="teacher-frame">
+  <img src="./1001261459.jpg" alt="Foto Pak Fitra">
+  <div class="teacher-caption">
+   <h2>Pak Fitra</h2>
+   <p>Guru terbaik, terima kasih atas semuanya.</p>
+  </div>
+ </div>
+
+ <div class="card">
+  <div class="gift">🎁</div>
+  <h2>There's Something For You</h2>
+  <p>Saya punya sedikit pesan spesial<br>
+  yang ingin disampaikan.</p>
+  <button class="btn" onclick="openLetter()">BUKA SURAT 💌</button>
+ </div>
+
+ <!-- SURAT -->
+ <div id="letter" class="hidden">
+  <article class="letter">
+   <h2>Untuk Pak Fitra</h2>
+   <div class="divider"></div>
+
+   <p>Assalamualaikum Warahmatullahi Wabarakatuh.</p>
+
+   <p><b>Selamat Hari Guru, Pak Fitra!</b> 🎉</p>
+
+   <p>Semoga Bapak selalu diberikan kesehatan,
+   kebahagiaan, umur panjang, dan kesuksesan.</p>
+
+   <p>Terima kasih telah sabar dalam mengajar,
+   membimbing, dan memberikan ilmu kepada kami.
+   Terima kasih atas semua nasihat dan kebaikan
+   yang telah Bapak berikan.</p>
+
+   <p>Maaf jika selama ini saya pernah melakukan
+   kesalahan atau membuat Bapak kecewa.</p>
+
+   <p>Semoga semua ilmu yang Bapak berikan
+   menjadi amal jariyah dan bermanfaat
+   bagi masa depan kami.</p>
+
+   <p><b>Terima kasih telah menjadi guru terbaik!</b> ❤️</p>
+
+   <div class="divider"></div>
+
+   <p class="signature">
+    Hormat saya,<br><br>
+    Ahmad Izzudin A.R<br>
+    Kelas 8A
+   </p>
+
+   <p style="text-align:center;font-weight:bold">
+    DIBUAT UNTUK GURU TERBAIK ❤️
+   </p>
+  </article>
+
+  <button class="btn" onclick="celebrate()">
+   KIRIM DOA & UCAPAN 🎉
+  </button>
+ </div>
+
+ <button class="btn btn2" onclick="sharePage()">
+  ↗ BAGIKAN HADIAH
+ </button>
+
+ <footer>
+  Made with ❤️ by Ahmad Izzudin A.R<br>
+  Special gift for Pak Fitra · Class 8A
+ </footer>
+</main>
+
+<!-- AUDIO -->
+<audio id="music" loop preload="auto">
+ <source src="./ssstik.io_1794030162499.mp3" type="audio/mpeg">
+</audio>
+
+<!-- MUSIC PLAYER -->
+<div class="music-player hidden" id="musicPlayer">
+ <button onclick="toggleMusic()" id="musicButton">▶</button>
+ <div class="music-info">
+  <b>Musik Spesial Hari Guru 🎵</b>
+  <small id="musicStatus">Tekan untuk memutar musik</small>
+ </div>
+ <span>♫</span>
+</div>
+
+<script>
+const CORRECT_PIN="1234";
+const music=document.getElementById("music");
+let playing=false;
+
+function checkPin(){
+ const pin=document.getElementById("pin").value;
+
+ if(pin===CORRECT_PIN){
+  document.getElementById("login").classList.add("hidden");
+  document.getElementById("main").classList.remove("hidden");
+  document.getElementById("musicPlayer").classList.remove("hidden");
+  confetti();
+ }else{
+  document.getElementById("message").textContent=
+   "PIN salah. Silakan coba lagi.";
+  document.getElementById("pin").value="";
+ }
+}
+
+document.getElementById("pin").addEventListener("keydown",e=>{
+ if(e.key==="Enter")checkPin();
+});
+
+async function toggleMusic(){
+ if(!playing){
+  try{
+   await music.play();
+   playing=true;
+   document.getElementById("musicButton").textContent="Ⅱ";
+   document.getElementById("musicStatus").textContent=
+    "Musik sedang diputar";
+  }catch(e){
+   document.getElementById("musicStatus").textContent=
+    "Gagal memutar. Periksa file MP3.";
+  }
+ }else{
+  music.pause();
+  playing=false;
+  document.getElementById("musicButton").textContent="▶";
+  document.getElementById("musicStatus").textContent="Musik dijeda";
+ }
+}
+
+function openLetter(){
+ document.getElementById("letter").classList.remove("hidden");
+ document.getElementById("letter").scrollIntoView({
+  behavior:"smooth",block:"start"
+ });
+ confetti();
+}
+
+function celebrate(){
+ confetti();
+ alert("Terima kasih telah menjadi guru terbaik, Pak Fitra! ❤️");
+}
+
+function confetti(){
+ const symbols=["✨","💛","🌸","❤️","⭐","🎉"];
+ for(let i=0;i<40;i++){
+  let el=document.createElement("div");
+  el.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+  el.style.cssText=`
+   position:fixed;top:-25px;left:${Math.random()*100}%;
+   z-index:20;pointer-events:none;
+   font-size:${12+Math.random()*16}px;
+   animation:fall ${3+Math.random()*4}s linear forwards;
+  `;
+  document.body.appendChild(el);
+  setTimeout(()=>el.remove(),7500);
+ }
+}
+
+async function sharePage(){
+ if(location.protocol==="file:"){
+  alert("Upload website ke hosting dahulu agar mendapatkan link.");
+  return;
+ }
+
+ if(navigator.share){
+  try{
+   await navigator.share({
+    title:"Hadiah Spesial untuk Pak Fitra",
+    text:"Ada hadiah Hari Guru spesial untuk Pak Fitra ❤️",
+    url:location.href
+   });
+  }catch(e){}
+ }else{
+  try{
+   await navigator.clipboard.writeText(location.href);
+   alert("Link berhasil disalin!");
+  }catch(e){
+   alert("Salin link dari alamat browser.");
+  }
+ }
+}
+</script>
+</body>
+</html>
