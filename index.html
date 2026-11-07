@@ -312,6 +312,7 @@ section{padding:85px 6%;scroll-margin-top:70px}
   object-fit:contain;
   border-radius:15px;
   background:#080b15;
+  cursor:pointer;
 }
 .slide-controls{display:flex;justify-content:center;gap:12px;margin-top:15px}
 
@@ -556,7 +557,7 @@ footer{
     <p>Ada sebuah kejutan kecil yang ingin saya persembahkan untuk Bapak.</p>
     <input id="pin" type="password" inputmode="numeric" maxlength="4" placeholder="••••">
     <div id="error"></div>
-    <button class="primary-btn" type="button" id="openButton" onclick="checkPin()">Buka Kenangan</button>
+    <button class="primary-btn" type="button" id="openButton">Buka Kenangan</button>
     <p style="font-size:11px;margin-top:20px">Masukkan PIN untuk melanjutkan</p>
   </div>
 </div>
@@ -584,8 +585,8 @@ footer{
     <a href="#certificate">Penghargaan</a>
   </nav>
   <div class="header-actions">
-    <button class="small-btn" id="musicBtn">♫ Putar Musik</button>
-    <button class="small-btn" id="fullscreenBtn">⛶</button>
+    <button class="small-btn" id="musicBtn" type="button">♫ Putar Musik</button>
+    <button class="small-btn" id="fullscreenBtn" type="button">⛶</button>
   </div>
 </header>
 
@@ -604,7 +605,7 @@ footer{
       Untuk seorang guru yang telah memberikan ilmu,
       inspirasi, dan kenangan yang tidak akan terlupakan.
     </p>
-    <a href="#letter"><button class="primary-btn">Baca Pesan Saya</button></a>
+    <a href="#letter"><button class="primary-btn" type="button">Baca Pesan Saya</button></a>
   </div>
 </section>
 
@@ -636,7 +637,7 @@ footer{
       <div class="envelope-icon">💌</div>
       <h3>Surat untuk Pak Fitra</h3>
       <p style="color:var(--muted)">Dibuat dengan penuh rasa terima kasih.</p>
-      <button class="primary-btn" id="letterButton">Buka Surat</button>
+      <button class="primary-btn" id="letterButton" type="button">Buka Surat</button>
     </div>
     <article class="letter" id="letterContent">
       <h3>Terima kasih, Pak Fitra.</h3>
@@ -663,8 +664,8 @@ footer{
     <h3 class="gold">Slideshow Kenangan</h3>
     <img class="slide-image" id="slideImage" src="1001261459.jpg" alt="Kenangan bersama Pak Fitra">
     <div class="slide-controls">
-      <button class="small-btn" id="prevSlide">← Sebelumnya</button>
-      <button class="small-btn" id="nextSlide">Selanjutnya →</button>
+      <button class="small-btn" id="prevSlide" type="button">← Sebelumnya</button>
+      <button class="small-btn" id="nextSlide" type="button">Selanjutnya →</button>
     </div>
     <p id="slideCounter" style="color:var(--muted);font-size:13px"></p>
   </div>
@@ -729,11 +730,11 @@ footer{
     <p>Berikan bintang sebagai simbol penghargaan.</p>
   </div>
   <div class="stars" id="stars">
-    <button class="star" data-value="1">★</button>
-    <button class="star" data-value="2">★</button>
-    <button class="star" data-value="3">★</button>
-    <button class="star" data-value="4">★</button>
-    <button class="star" data-value="5">★</button>
+    <button class="star" data-value="1" type="button">★</button>
+    <button class="star" data-value="2" type="button">★</button>
+    <button class="star" data-value="3" type="button">★</button>
+    <button class="star" data-value="4" type="button">★</button>
+    <button class="star" data-value="5" type="button">★</button>
     <p id="starMessage">Pilih bintang untuk memberikan apresiasi.</p>
   </div>
 </section>
@@ -751,7 +752,7 @@ footer{
     <span></span><span></span><span></span><span></span><span></span>
   </div>
   <div style="text-align:center">
-    <button class="primary-btn" id="musicSectionBtn">♫ Putar Musik</button>
+    <button class="primary-btn" id="musicSectionBtn" type="button">♫ Putar Musik</button>
   </div>
 </section>
 
@@ -785,20 +786,11 @@ footer{
     <p>Tekan kotak hadiah untuk membukanya.</p>
   </div>
   <div class="gift-area">
-    <button class="gift" id="giftButton" aria-label="Buka hadiah">🎁</button>
+    <button class="gift" id="giftButton" type="button" aria-label="Buka hadiah">🎁</button>
     <div id="giftMessage">
       <h3>Terima Kasih, Pak Fitra!</h3>
       <p>
         Semoga semua ilmu yang Bapak berikan menjadi kebaikan
         yang terus mengalir. Semoga Bapak selalu sehat dan bahagia.
       </p>
-      <strong>Salam hormat dari Ahmad Izzuddin A.R ❤️</strong>
-    </div>
-  </div>
-</section>
-
-<!-- SECRET -->
-<section>
-  <div class="section-heading">
-    <p class="eyebrow">Pesan Rahasia</p>
-    <h2>Satu Hal <span class="gold">L
+      <strong>Salam hormat dari Ahmad Izzuddin A.R ❤
